@@ -1,0 +1,88 @@
+.container {
+  position: relative;
+  height: 30rem;
+  width: 30rem;
+
+  perspective: 150rem;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    height: 22rem;
+    width: 22rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 100%;
+    width: 50%;
+  }
+
+  .contentBack,
+  .contentFront {
+    position: relative;
+    transition: all 1s;
+    transform: rotateY(0deg) !important;
+    backface-visibility: visible;
+    border-radius: 0 !important;
+  }
+
+  .contentFront {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.contentFront,
+.contentBack {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+
+  transition: all 1s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.contentFront {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+}
+
+.contentBack {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+.inputField {
+  color: black;
+  border-radius: 15px;
+  margin-top: 3rem;
+}
+
+.container:hover .contentFront {
+  transform: rotateY(-180deg);
+}
+
+.container:hover .contentBack {
+  transform: rotateY(0);
+}
+
+.topupReady {
+  padding: 6px 15px;
+  border-radius: 1rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}

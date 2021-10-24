@@ -1,0 +1,27 @@
+.border {
+  width: 9px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: rgb(105, 105, 105);
+}
+
+.border::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 4px;
+  width: 1px;
+  height: 35%;
+  background-color: rgba(200, 200, 200, 0.959);
+}
+
+.border::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+  width: 1px;
+  height: 35%;
+  background-color: rgba(200, 200, 200, 0.959);
+}
