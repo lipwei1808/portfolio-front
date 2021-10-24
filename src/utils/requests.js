@@ -3,6 +3,7 @@ export function getCookie() {
 }
 
 export function signup(body) {
+  console.log(process.env.REACT_APP_SERVER_URL);
   return fetch(`${process.env.REACT_APP_SERVER_URL}/signup`, {
     method: "post",
     body: JSON.stringify(body),
