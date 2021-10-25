@@ -15,7 +15,7 @@ export function useReload() {
         throw Error();
       }
       const data = await res.json();
-      document.cookie = `token=${data.access_token}`;
+      document.cookie = `token=${data.access_token}; max-age=1800`;
       setUser(data.user);
       setLoading(false);
       console.log("refreshed!");
